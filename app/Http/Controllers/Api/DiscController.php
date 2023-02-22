@@ -35,6 +35,8 @@ class DiscController extends Controller
             $request->price,
             $request->year,
             $request->company_id,
+            
+            //$request->company()->associate(Company::findOrFail($request->company_id))
         );
 
         return response()->json($this->servicio->insert($discDTO),201);
@@ -60,6 +62,7 @@ class DiscController extends Controller
             $request->price,
             $request->year,
             $request->company_id,
+            //$request->company()->associate(Company::findOrFail($request->company_id))
         );
 
         return response()->json($this->servicio->update($discDTO,$id),201);
